@@ -8,15 +8,25 @@
 </head>
 <body>
     <h1>Learn JSON</h1>
-    <div id="output"></div>
+    <div id="output">
+    
+     <ul id="taskList">
+
+     </ul>
+
+    </div>
+
+
     <script type ="text/javascript">
-       var data = {
+       var data = `{
            "tasks":{
                "Cut Grass":false,
                "Clean Room":false,
+               "Go to Gym":true,
+               "Make Dinner":true
            }
-       }
-       console.log(data);
+       }`
+       console.log(JSON.parse(data));
     </script>
 </body>
 </html>
