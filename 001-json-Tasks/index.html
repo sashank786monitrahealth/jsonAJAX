@@ -35,7 +35,8 @@
 
        for(var key in dataJSON.tasks){
            console.log(key , dataJSON.tasks[key]);
-           var html = '<li>'+key+'<input type="checkbox" value="'+key+'"></li>';
+           var status = !dataJSON.tasks[key]?'':'checked';
+           var html = '<li>'+key+'<input type="checkbox" value="'+key+'"'+status+'></li>';
            taskList.innerHTML += html;
        }
     </script>
