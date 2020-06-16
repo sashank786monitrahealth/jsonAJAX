@@ -7,7 +7,7 @@
     <title>JSON Exercise</title>
 </head>
 <body>
-    <h1>Learn JSON</h1>
+    <h1>Task List:</h1>
     <div id="output">
     
      <ul id="taskList">
@@ -25,8 +25,21 @@
                "Go to Gym":true,
                "Make Dinner":true
            }
-       }`
-       console.log(JSON.parse(data));
+       }`;
+
+       var dataJSON = JSON.parse(data);
+       
+       let output = document.querySelector("#output");
+       let taskList = document.getElementById("taskList");
+       //console.log(dataJSON);
+
+       for(var key in dataJSON.tasks){
+           console.log(key , dataJSON.tasks[key]);
+           var html = '<li>'+key+'<input type="checkbox" value="'+key+'"></li>';
+           taskList.innerHTML += html;
+       }
     </script>
 </body>
 </html>
+
+
