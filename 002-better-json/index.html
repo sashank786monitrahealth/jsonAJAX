@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Exercise</title>
+</head>
+<body>
+    <h1>Task List:</h1>
+    <div id="output">
+    
+     <ul id="taskList">
+
+     </ul>
+
+    </div>
+
+
+    <script type ="text/javascript">
+       var data = 
+       [
+  {"info":"Cut Grass", "status":false},
+  {"info":"Clean Room", "status":false},
+  {"info":"Go to Gym", "status":false},
+  {"info":"Make Dinner", "status":false},
+]
+       ;
+      console.log(data);
+
+      /* 
+       var dataJSON = JSON.parse(data);
+
+      console.log(dataJSON);
+       let output = document.querySelector("#output");
+       let taskList = document.getElementById("taskList");
+       //console.log(dataJSON);
+
+       for(var key in dataJSON.tasks){
+           console.log(key , dataJSON.tasks[key]);
+           var status = !dataJSON.tasks[key]?'':'checked';
+           var html = '<li>'+key+'<input type="checkbox" value="'+key+'"'+status+'></li>';
+           taskList.innerHTML += html;
+           addEvents();
+       }
+
+       function addEvents(){
+          var checkBoxes = document.querySelectorAll("#taskList input[type='checkbox'");
+          console.log(checkBoxes);
+
+          for(var index in checkBoxes){
+              checkBoxes[index].onchange = updateJSON;
+          }
+       }
+
+       function updateJSON(){
+           var key = event.target.value;
+           console.log(key, event.target.checked);
+           dataJSON.tasks[key] = event.target.checked;
+       }
+       */
+    </script>
+</body>
+</html>
+
+
