@@ -52,8 +52,8 @@
 
        function updateJSON(){
            var key = event.target.value;
-           console.log(key);
-           console.dir(event.target);
+           console.log(key, event.target.checked);
+           dataJSON.tasks[key] = event.target.checked;
        }
     </script>
 </body>
