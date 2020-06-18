@@ -32,6 +32,17 @@
        var dataJSON = JSON.parse(data);
 
       console.log(dataJSON);
+
+      var output = document.getElementById('output');
+      var taskList = document.querySelector('#taskList');
+
+      for(var key in dataJSON){
+          console.log(key, dataJSON[key]);
+          var status = dataJSON[key].status ? ' checked':'';
+          var html = '<li>'+dataJSON[key].info+'<input type="checkbox" value="'+key+'"'+status+'> </li>';
+
+          taskList.innerHTML += html;
+      }
      
       /*
        let output = document.querySelector("#output");
