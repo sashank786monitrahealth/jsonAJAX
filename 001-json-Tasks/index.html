@@ -44,6 +44,16 @@
        function addEvents(){
           var checkBoxes = document.querySelectorAll("#taskList input[type='checkbox'");
           console.log(checkBoxes);
+
+          for(var index in checkBoxes){
+              checkBoxes[index].onchange = updateJSON;
+          }
+       }
+
+       function updateJSON(){
+           var key = event.target.value;
+           console.log(key);
+           console.dir(event.target);
        }
     </script>
 </body>
