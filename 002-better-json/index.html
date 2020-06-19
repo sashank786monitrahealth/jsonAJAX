@@ -44,34 +44,37 @@
           taskList.innerHTML += html;
       }
      
-      /*
-       let output = document.querySelector("#output");
-       let taskList = document.getElementById("taskList");
-       //console.log(dataJSON);
+      addEvents();
 
-       for(var key in dataJSON.tasks){
-           console.log(key , dataJSON.tasks[key]);
-           var status = !dataJSON.tasks[key]?'':'checked';
-           var html = '<li>'+key+'<input type="checkbox" value="'+key+'"'+status+'></li>';
-           taskList.innerHTML += html;
-           addEvents();
-       }
-
-       function addEvents(){
-          var checkBoxes = document.querySelectorAll("#taskList input[type='checkbox'");
-          console.log(checkBoxes);
+      // this function will add events 
+      function addEvents(){
+          var checkBoxes = document.querySelectorAll('#taskList input[type="checkbox"]');
 
           for(var index in checkBoxes){
+             // console.log("index",index);
               checkBoxes[index].onchange = updateJSON;
           }
-       }
+          //console.log(checkBoxes);
+      }
 
-       function updateJSON(){
-           var key = event.target.value;
-           console.log(key, event.target.checked);
-           dataJSON.tasks[key] = event.target.checked;
-       }
-       */
+function updateJSON(){
+    var key = event.target.value;
+    console.log(key, event.target.checked)
+    dataJSON.tasks[key] = event.target.checked;
+}
+
+
+
+/*
+     function updateJSON(){
+         var key = event.target.value;
+         console.log(key, event.target.checked);
+         dataJSON.tasks[key] = event.target.checked;
+     }
+
+*/
+
+   
     </script>
 </body>
 </html>
