@@ -31,13 +31,13 @@
       
        var dataJSON = JSON.parse(data);
 
-      console.log(dataJSON);
+      //console.log(dataJSON);
 
       var output = document.getElementById('output');
       var taskList = document.querySelector('#taskList');
 
       for(var key in dataJSON){
-          console.log(key, dataJSON[key]);
+          //console.log(key, dataJSON[key]);
           var status = dataJSON[key].status ? ' checked':'';
           var html = '<li>'+dataJSON[key].info+'<input type="checkbox" value="'+key+'"'+status+'> </li>';
 
@@ -59,20 +59,15 @@
 
 function updateJSON(){
     var key = event.target.value;
-    console.log(key, event.target.checked)
-    dataJSON.tasks[key] = event.target.checked;
+    console.log(event.target)
+    //console.log(key, event.target.checked)
+    //dataJSON.tasks[key] = event.target.checked;
+    dataJSON[key].status = event.target.checked;
 }
 
 
 
-/*
-     function updateJSON(){
-         var key = event.target.value;
-         console.log(key, event.target.checked);
-         dataJSON.tasks[key] = event.target.checked;
-     }
 
-*/
 
    
     </script>
