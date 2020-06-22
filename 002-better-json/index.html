@@ -30,7 +30,11 @@ var dataJSON = '';
 
       var output = document.getElementById('output');
       var taskList = document.querySelector('#taskList');
-      document.getElementById("myForm");
+      document.getElementById("myForm").addEventListener('submit',function(e){
+          e.preventDefault();
+          var tempValue = document.querySelector('input[name="task"]').value;
+          console.log(tempValue);
+      });
 
     window.onload = function(){
         if(sessionStorage['task'] != null){
