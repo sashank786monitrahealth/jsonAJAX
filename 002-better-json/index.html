@@ -33,8 +33,7 @@ var dataJSON = '';
       document.getElementById("myForm").addEventListener('submit',function(e){
           e.preventDefault();
           var tempValue = document.querySelector('input[name="task"]').value;
-          dataJSON.push({"info":tempValue,"status":false})
-          console.log(dataJSON);
+          addNewItem({"info":tempValue,"status":false});
       });
 
     window.onload = function(){
@@ -96,7 +95,10 @@ function updateJSON(){
     dataJSON[key].status = event.target.checked;
 }
 
-
+function addNewItem(data){
+    dataJSON.push(data);
+    console.log(dataJSON);
+}
 
 
 
