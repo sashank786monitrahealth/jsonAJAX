@@ -33,7 +33,8 @@ var dataJSON = '';
       document.getElementById("myForm").addEventListener('submit',function(e){
           e.preventDefault();
           var tempValue = document.querySelector('input[name="task"]').value;
-          console.log(tempValue);
+          dataJSON.push({"info":tempValue,"status":false})
+          console.log(dataJSON);
       });
 
     window.onload = function(){
