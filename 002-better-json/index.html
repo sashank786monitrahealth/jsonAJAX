@@ -97,12 +97,12 @@ function updateJSON(){
 
 function addNewItem(data){
 
-          var status = data.status ? ' checked':'';
-          taskList.innerHTMl += '<li>'+data.info+'<input type="checkbox" value="'+dataJSON.length+'"> </li>';
+          
+          taskList.innerHTML += '<li>'+data.info+'<input type="checkbox" value="'+dataJSON.length+'"> </li>';
 
           dataJSON.push(data);
 
-          taskList.innerHTML += html;
+          
     console.log(dataJSON);
 }
 
