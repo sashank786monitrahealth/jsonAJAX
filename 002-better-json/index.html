@@ -95,6 +95,7 @@ function buildCheckboxes(data){
 
 function updateJSON(){
     var key = event.target.value;
+    console.log(key);
     //console.log(event.target)
     //console.log(key, event.target.checked)
     //dataJSON.tasks[key] = event.target.checked;
@@ -123,6 +124,7 @@ function addCheckbox(data, key){
    li.appendChild(textInside);
    li.appendChild(checkbox);
    document.querySelector('#taskList').appendChild(li);
+   dataJSON[key]=data;
 
 }
 
