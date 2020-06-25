@@ -118,6 +118,8 @@ function addCheckbox(data, key){
    var li = document.createElement("li");
    var checkbox = document.createElement("input");
    var textInside = document.createTextNode(data.info);
+   var span = document.createElement('span');
+   
    checkbox.type = 'checkbox';
    checkbox.value = key;
    checkbox.checked = data.status;
