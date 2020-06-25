@@ -100,6 +100,7 @@ function updateJSON(){
     //console.log(key, event.target.checked)
     //dataJSON.tasks[key] = event.target.checked;
     dataJSON[key].status = event.target.checked;
+    sessionStorage["task"]=JSON.stringify(dataJSON);
 }
 
 function addNewItem(data){
