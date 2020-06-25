@@ -119,13 +119,15 @@ function addCheckbox(data, key){
    var checkbox = document.createElement("input");
    var textInside = document.createTextNode(data.info);
    var span = document.createElement('span');
-   
+   span.innerHTML = 'x';
+
    checkbox.type = 'checkbox';
    checkbox.value = key;
    checkbox.checked = data.status;
    checkbox.setAttribute("onchange","updateJSON()");
    li.appendChild(textInside);
    li.appendChild(checkbox);
+   li.appendChild(span);
    document.querySelector('#taskList').appendChild(li);
    dataJSON[key]=data;
 
