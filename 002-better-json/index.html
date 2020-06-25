@@ -61,11 +61,17 @@ function buildCheckboxes(data){
 
 
       for(var key in data){
+
+         addCheckbox(data[key],key)
+    /*
           //console.log(key, data[key]);
           var status = data[key].status ? ' checked':'';
           var html = '<li>'+data[key].info+'<input type="checkbox" value="'+key+'"'+status+'> </li>';
 
           taskList.innerHTML += html;
+
+    */
+
       }
      
       addEvents();
@@ -97,17 +103,24 @@ function updateJSON(){
 
 function addNewItem(data){
 
-          
-          taskList.innerHTML += '<li>'+data.info+'<input type="checkbox" value="'+dataJSON.length+'"> </li>';
+          addCheckbox(data,dataJSON.length)
+          //taskList.innerHTML += '<li>'+data.info+'<input type="checkbox" value="'+dataJSON.length+'"> </li>';
 
-          dataJSON.push(data);
+          //dataJSON.push(data);
 
           
     console.log(dataJSON);
 }
 
 function addCheckbox(data, key){
-   
+   var li = document.createElement("li");
+   var checkbox = document.createElement("input");
+   checkbox.type = 'checkbox';
+   checkbox.value = key;
+   checkbox.checked = data.status;
+
+   li.appendChild(checkbox);
+   document.querySelector('#taskList').appendChild(li);
 }
 
    
