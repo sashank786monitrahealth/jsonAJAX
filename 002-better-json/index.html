@@ -43,7 +43,7 @@ var dataJSON = '';
             var data = `
        [
   {"info":"Cut the Grass", "status":false},
-  {"info":"Clean Room", "status":false},
+  {"info":"Clean Room", "status":true},
   {"info":"Go to Gym", "status":false},
   {"info":"Make Dinner", "status":false}
 ]
@@ -119,6 +119,7 @@ function addCheckbox(data, key){
    checkbox.type = 'checkbox';
    checkbox.value = key;
    checkbox.checked = data.status;
+   checkbox.setAttribute("onchange","updateJSON()");
    li.appendChild(textInside);
    li.appendChild(checkbox);
    document.querySelector('#taskList').appendChild(li);
