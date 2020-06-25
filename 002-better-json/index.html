@@ -128,12 +128,17 @@ function addCheckbox(data, key){
    li.appendChild(textInside);
    li.appendChild(checkbox);
    li.appendChild(span);
-   span.onclick = function(){
-       console.log("clicked.");
-   }
+   span.onclick = remove;
 
    document.querySelector('#taskList').appendChild(li);
    dataJSON[key]=data;
+
+}
+
+function remove(event){
+    console.log(event);
+    //console.log(this.previousElementSibling);
+    console.log(this.previousSibling.value);
 
 }
 
