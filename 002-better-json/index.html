@@ -115,12 +115,14 @@ function addNewItem(data){
 function addCheckbox(data, key){
    var li = document.createElement("li");
    var checkbox = document.createElement("input");
+   var textInside = document.createTextNode(data.info);
    checkbox.type = 'checkbox';
    checkbox.value = key;
    checkbox.checked = data.status;
-
+   li.appendChild(textInside);
    li.appendChild(checkbox);
    document.querySelector('#taskList').appendChild(li);
+
 }
 
    
