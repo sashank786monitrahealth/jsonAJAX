@@ -37,9 +37,10 @@ var dataJSON = '';
       });
 
     window.onload = function(){
-        if(sessionStorage['task'] != null){
-            dataJSON = JSON.parse(sessionStorage['task']);
+        if(sessionStorage['tasklist'] != null){
+            dataJSON = JSON.parse(sessionStorage['tasklist']);
         } else {
+            /*
             var data = `
        [
   {"info":"Cut the Grass", "status":false},
@@ -49,11 +50,23 @@ var dataJSON = '';
 ]
        `;
 
-          dataJSON = JSON.parse(data);
+*/
+
+
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+ 
+ if (xhr.readyState == 4 && xhr.status == 200){
+    dataJSON = JSON.parse(xhr.response);
+        buildCheckboxes(dataJSON);
+}
+}
+
+xhr.open('GET','https://raw.githubusercontent.com/sashank786monitrahealth/jsonAJAX/master/db.json',true);
+xhr.send();
 
         }
         
-        buildCheckboxes(dataJSON);
     }
 
 function buildCheckboxes(data){
