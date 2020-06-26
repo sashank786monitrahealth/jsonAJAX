@@ -136,9 +136,13 @@ function addCheckbox(data, key){
 }
 
 function remove(event){
-    console.log(event);
+    //console.log(event);
     //console.log(this.previousElementSibling);
-    console.log(this.previousSibling.value);
+    var index = this.previousSibling.value
+    //console.log(this.previousSibling.value);
+    taskList.innerHTML = "";
+    dataJSON.splice(index,1);
+    buildCheckboxes(dataJSON);
 
 }
 
