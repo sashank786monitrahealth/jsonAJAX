@@ -17,7 +17,8 @@
         //console.log('state changed',ajax.readyState, ajax.status)
         if(ajax.readyState==4 && ajax.status==200){
         console.log("ready to accept data");
-        console.log(JSON.parse(ajax.responseText))
+        var jsonData = JSON.parse(ajax.responseText);
+        console.log(jsonData)
     }
     }
 
