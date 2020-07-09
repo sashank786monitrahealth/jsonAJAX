@@ -13,7 +13,11 @@
     <script type="text/javascript">
     
     var ajax = new XMLHttpRequest();
-    ajax.open("GET","https://randomuser.me/api/",true)
+    ajax.onreadystatechange = function(){
+        console.log('state changed',ajax.readyState, ajax.status)
+    }
+
+    ajax.open("GET","https://randomuser.me/api/",true);
     // we cannot send without opening
     ajax.send();
     </script>
